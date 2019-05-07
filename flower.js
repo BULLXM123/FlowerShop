@@ -24,6 +24,17 @@ $(function(){
       });//设置动画
   });
 });
+
+//随机设置字体样式
+$(function(){
+  $("div.productsAsideCategorys div.row a").each(function(){
+      var v = Math.round(Math.random() *6);
+      if(v == 1)
+          $(this).css("color","#BC75E9");
+  });
+});
+
+//菜单显示/隐藏
 function showProductsAsideCategorys(cid){
   $("div.eachCategory[cid="+cid+"]").css("background-color","white");
   $("div.eachCategory[cid="+cid+"] a").css("color","#BC75E9");
@@ -54,3 +65,68 @@ $(function(){
       hideProductsAsideCategorys(cid);
   });
 });
+
+
+//搜索栏
+
+var keywords = ["百合花","百年好合","曼珠沙华","浪漫","求婚"];
+
+my$("keyword").onkeyup=function(){
+	//每一次键盘抬起都判断一次是否有div
+	
+	if(my$("dv")){
+		my$("box").removeChild(my$("dv"));
+		}
+	
+	
+	
+	var text = this.value;
+	var tempArr=[];
+	for(var i=0;i<keywords.length;i++){
+		if(keywords[i].indexOf(text)==0){
+			tempArr.push(keywords[i]);
+			}
+		
+		}
+		console.log(tempArr);
+		
+	//如果文本框是空的，临时数组是空的，则不创建div
+	if(tempArr.length==0||this.value.length==0){
+		if(my$("dv")){
+		my$("box").removeChild(my$("dv"));
+		}
+		return;
+		}
+	
+	
+	//创建div,加入id="box'
+	var dvobj = document.createElement("div");
+	my$("box").appendChild(dvobj);
+	dvobj.id="dv";
+	dvobj.style.width="300px";
+	dvobj.style.border="1px solid #BC75E9";
+	
+	dvobj.style.background="white";
+	dvobj.style.position="absolute";
+	
+		
+		for(var i=0;i<tempArr.length;i++){
+		var pobj = document.createElement("p");
+			dvobj.appendChild(pobj);
+			pobj.innerHTML=tempArr[i];
+			pobj.style.cursor="pointer";
+			pobj.style.margin=0;
+			pobj.style.padding=0;
+			pobj.style.paddingLeft="5px";
+			pobj.style.paddingTop ="5px";
+            pobj.style.paddingBottom="5px";
+			pobj.onmouseover=function(){
+				this.style.background="yellow";
+				this.style.font="bold";
+				};
+			pobj.onmouseout=function(){
+				this.style.background="";
+				};
+			}
+	
+	};

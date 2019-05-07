@@ -36,68 +36,7 @@
 </form>
 <div id="box"></div>
 <script src="common.js"></script>
-<script>
-var keywords = ["百合花","百年好合","曼珠沙华","浪漫","求婚"];
-
-my$("keyword").onkeyup=function(){
-	//每一次键盘抬起都判断一次是否有div
-	
-	if(my$("dv")){
-		my$("box").removeChild(my$("dv"));
-		}
-	
-	
-	
-	var text = this.value;
-	var tempArr=[];
-	for(var i=0;i<keywords.length;i++){
-		if(keywords[i].indexOf(text)==0){
-			tempArr.push(keywords[i]);
-			}
-		
-		}
-		console.log(tempArr);
-		
-	//如果文本框是空的，临时数组是空的，则不创建div
-	if(tempArr.length==0||this.value.length==0){
-		if(my$("dv")){
-		my$("box").removeChild(my$("dv"));
-		}
-		return;
-		}
-	
-	
-	//创建div,加入id="box'
-	var dvobj = document.createElement("div");
-	my$("box").appendChild(dvobj);
-	dvobj.id="dv";
-	dvobj.style.width="300px";
-	dvobj.style.border="1px solid #BC75E9";
-	
-	dvobj.style.background="white";
-	dvobj.style.position="absolute";
-	
-		
-		for(var i=0;i<tempArr.length;i++){
-		var pobj = document.createElement("p");
-			dvobj.appendChild(pobj);
-			pobj.innerHTML=tempArr[i];
-			pobj.style.cursor="pointer";
-			pobj.style.margin=0;
-			pobj.style.padding=0;
-			pobj.style.paddingLeft="5px";
-			pobj.style.paddingTop ="5px";
-            pobj.style.paddingBottom="5px";
-			pobj.onmouseover=function(){
-				this.style.background="yellow";
-				this.style.font="bold";
-				};
-			pobj.onmouseout=function(){
-				this.style.background="";
-				};
-			}
-	
-	};
+<script src="flower.js" type="text/javascript">
 
 </script>
 <div class="hot-search">热门搜索：
@@ -254,13 +193,7 @@ my$("keyword").onkeyup=function(){
 </div>
 <div style="position: relative;left: 0;top: 0;">
 <script>
-$(function(){
-    $("div.productsAsideCategorys div.row a").each(function(){
-        var v = Math.round(Math.random() *6);
-        if(v == 1)
-            $(this).css("color","#BC75E9");
-    });
-});
+
 </script>
     <div class="productsAsideCategorys" cid="83" style="display: none;">
             <div class="row show1">
@@ -588,7 +521,7 @@ $(function(){
         <a href="#">支付宝充值</a>
         </div>
         <div class="descColumn">
-        <span class="descColumnTitle">天猫保障</span>
+        <span class="descColumnTitle">质量保障</span>
         <a href="#">发票保障</a>
         <a href="#">售后规则</a>
         <a href="#">缺货赔付</a>
@@ -607,7 +540,6 @@ $(function(){
         <a href="#">天猫智库</a>
         <a href="#">天猫规则</a>
         <a href="#">物流服务</a>
-        <a href="#">喵言喵语</a>
         </div>
         
         <div class="descColumn">
