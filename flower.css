@@ -72,10 +72,17 @@ h1.logo{
 	}
 #shoppingcart{
 		margin:50px;
-		
-		border:1px solid;
-		float:right;
-		}
+		border:1px solid gray;
+        float:right;
+        }
+        #shoppingcart a{
+            color:#9400D3;
+            text-decoration: none;
+        }
+ #shoppingcart a:hover{
+        cursor: pointer;
+
+        }
 #hot-line{
 	float:left;
 	margin-left:30px;
@@ -312,4 +319,29 @@ div.categoryMenu div.eachCategory {
 	
 }
 div.categoryMenu div.eachCategory a{
-	color:white;}
+    color:white;}
+    div.footer_desc{
+        border-top-style:solid;
+        border-top-width:1px;
+        border-top-color:#e7e7e7;
+        padding-top:30px;
+        margin:0px 20px;
+    }
+    div.footer_desc div.descColumn{
+        width:20%;
+        float:left;
+        padding-left:15px;
+        }
+    div.footer_desc div.descColumn span.descColumnTitle{
+        font-size:14px;
+        font-weight:bold;
+        color:#646464;
+    }
+    div.footer_desc a{
+        display:block;
+        padding-top:3px;
+        
+    }div.footer_desc a:hover{
+        text-decoration:none;
+        color:#BC75E9;
+    }
