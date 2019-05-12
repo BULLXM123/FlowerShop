@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>鲜花预定</title>
+<title>花卉</title>
 <script src="bootstrap/js/jquery/2.0.0/jquery.min.js"></script>
 <link href="bootstrap/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
 <script src="bootstrap/js/bootstrap/3.3.6/bootstrap.min.js"></script>
@@ -15,11 +15,11 @@
 <span><a href="#">表白/求婚</a></span>
 </div>
 <div class="wrapper">
-        <a href="/list.html" target="_blank" style="display: block;height: 90px;width: 100%;"></a>
+        <a href="flower.html" target="_blank" style="display: block;height: 90px;width: 100%;"></a>
     </div>
 <nav class="top">
 <a href="flower.html"> &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-home ">首页</span></a>
-
+<a href="login.html"> &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off ">登陆</span></a>
 <span class="pull-right">
 <a href="#"><span class="glyphicon glyphicon-shopping-cart">我的订单</span></a> | <a href="#"><span class="glyphicon glyphicon-search">订单查询</span> </a>| <a href="#"><span class="glyphicon glyphicon-comment">投诉建议&nbsp;</span></a>
 </span>
@@ -30,7 +30,7 @@
 <div class="search" >
 <form class="search-form" method="get">
 
-<input placeholder="请输入您要搜索的商品关键字" name="keyword" id="keyword" value maxlength="60">
+<input placeholder="请输入您要搜索的商品关键字" name="keyword" id="keyword" value maxlength="60" onblur="deleted()">
 <button id="submit">搜索</button>
 
 </form>
@@ -192,9 +192,6 @@
     </div> 
 </div>
 <div style="position: relative;left: 0;top: 0;">
-<script>
-
-</script>
     <div class="productsAsideCategorys" cid="83" style="display: none;">
             <div class="row show1">
                         <a href="#nowhere">
@@ -513,10 +510,11 @@
 
 </div>
 
+<div style="height:110px"></div>
+
 <div class="footer_desc" id="footer_desc">
         <div class="descColumn">
         <span class="descColumnTitle">购物指南</span>
-        <a href="#">免费注册</a>
         <a href="#">开通支付宝</a>
         <a href="#">支付宝充值</a>
         </div>
@@ -537,8 +535,7 @@
         <span class="descColumnTitle">商家服务</span>
         <a href="#">商家入驻</a>
         <a href="#">商家中心</a>
-        <a href="#">天猫智库</a>
-        <a href="#">天猫规则</a>
+        <a href="#">本店规则</a>
         <a href="#">物流服务</a>
         </div>
         

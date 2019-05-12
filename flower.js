@@ -6,7 +6,7 @@ $(function(){
   });
   $('#bd').click(function(e){
       var $i=$('<b></b>').text('🌺');
-     var x=e.pageX,y=e.pageY;//获取鼠标点击的位置坐�?
+     var x=e.pageX,y=e.pageY;//获取鼠标点击的位置坐标
     $i.css({
         "z-index": 9999,
         "top": y - 20,
@@ -24,6 +24,20 @@ $(function(){
       });//设置动画
   });
 });
+
+// 获取元素
+function my$(id){
+	return document.getElementById(id);
+	}
+
+function setInnerText(element,text){
+	if(typeof(element.textContent)=="underfined"){
+		return element.innerHTML = text;
+		}
+		else{
+			element.textContext = text;
+			}
+	}
 
 //随机设置字体样式
 $(function(){
@@ -68,6 +82,9 @@ $(function(){
 
 
 //搜索栏
+function deleted(){
+	my$("box").removeChild(my$("dv"));
+}
 
 var keywords = ["百合花","百年好合","曼珠沙华","浪漫","求婚"];
 
