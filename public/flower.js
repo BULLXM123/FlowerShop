@@ -24,7 +24,14 @@ $(function(){
       });//设置动画
   });
 });
-
+function exit(){
+	if(confirm("是否退出登录")){
+		window.location.href="../flower.html"
+	}
+	else{
+		return
+	}
+}
 // 获取元素
 function my$(id){
 	return document.getElementById(id);

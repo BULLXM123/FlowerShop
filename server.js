@@ -4,7 +4,7 @@ var app = express();
 var path = require('path');
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
-// var swig = require('swig')
+var swig = require('swig')
 var connection = mysql.createConnection({
    host:'localhost',
    user:'root',
@@ -22,9 +22,15 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser());
 app.use(bodyParser.json())
-// app.set('views','./views')
-// app.engine('html',swig.renderFile)
-// app.set('view engine','html')
+//swig渲染
+app.engine('html',swig.renderFile);
+//摸板引擎存放目录的关键字，固定字段
+app.set('views',__dirname+'/public/');
+//注册摸板引擎，固定字段
+app.set('view engine','html');
+//关闭swig缓存,缓存的目的也是提高node服务器的响应速度
+swig.setDefaults({cache:false});
+
 app.get('/',function(req,res){
     res.redirect('/index.html')
 })
@@ -36,6 +42,7 @@ app.get('/index.html',function(req,res){
     // })
 
 })
+//获取搜索框鲜花
 app.get('/flowername',function(req,res){
    
     connection.query('SELECT * FROM flowername',function(err,results,fields){
@@ -48,8 +55,8 @@ app.get('/flowername',function(req,res){
        res.send(data)
     })
 })
+//登录
 app.get('/user',function(req,res){
-   
     connection.query(userSql.query,function(err,results,fields){
         if(err) throw err;
         results = JSON.stringify(results);
@@ -60,7 +67,7 @@ app.get('/user',function(req,res){
        res.send(data)
     })
 })
-
+//注册
 app.post('/adduser',function(req,res){
     // console.log(req);
     var email = req.body.email; 
@@ -81,10 +88,21 @@ app.post('/adduser',function(req,res){
     })
 })
 
-// app.post('/login',function(req,res){
+app.post('/showUser',function(req,res){
+    var email = req.body.email;
+    console.log(email);
+    res.render('flower',{
+        username:email
+    },function(err,html){
+        res.send(html)
+    })
+
+    console.log("render succeed");
+  
+
     
 
-// })
+})
 var server = app.listen(3000,function(){
     console.log('http://localhost:3000');
 })
