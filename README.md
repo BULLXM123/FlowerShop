@@ -9,7 +9,7 @@ This is the shop about selling flowers.
 ### 使用说明：
   * 1.安装nodejs并配置好环境变量
   * 2.在文件夹下打开cmd界面
-  * 3.node server
+  * 3.运行命令：node server
   * 4.打开 [http://localhost:3000](http://localhost:3000)
   
   ### [我的github](https://github.com/BULLXM123)  
