@@ -1,0 +1,23 @@
+create database flowershop;
+use flowshop;
+SET FOREIGN_KEY_CHECKS=0;
+
+DROP TABLE IF EXISTS flowername;
+create table flowername(
+name varchar(25) not null,
+primary key (name)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into flowername values("百合花");
+insert into flowername values("百年好合");
+insert into flowername values("曼珠沙华");
+insert into flowername values("浪漫");
+insert into flowername values("求婚");
+
+DROP TABLE IF EXISTS user;
+create table user(
+email varchar(50) not null,
+password varchar(25) not null,
+primary key (email)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
