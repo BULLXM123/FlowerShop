@@ -11,7 +11,7 @@
             for(var i=0;i<data.length;i++){	
                 user.push(data[i]);
                 // console.log(data[i]);
-                console.log(user);
+                // console.log(user);
                 
             }
             
