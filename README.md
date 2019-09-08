@@ -1,4 +1,6 @@
 # FlowerShop
+[!image](https://raw.githubusercontent.com/BULLXM123/FlowerShop/master/GIF.gif)
+
 This is the shop about selling flowers.  
 一个简单的花店网站。  
 使用了 bootstrap 框架实现图标和轮播效果。  
