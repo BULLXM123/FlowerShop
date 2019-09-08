@@ -19,7 +19,7 @@
     })
     
     $('#login').click(function(){
-        window.location.href='login.html'
+        
     var email = $('#inputEmail3').val();
     // console.log(email);
     var password = $('#inputPassword3').val();
@@ -37,13 +37,15 @@
             alert('登陆成功！');
             // window.location.href="flower.html"
             $.ajax({
-                url:'http://localhost:3000/showUser',
+                url:'http://localhost:3000/check',
                 type:'POST',
                 data:{email:$('#inputEmail3').val()},
                 success:function(data){
-                   
+                    // window.location.href="./views/index.html"
+                    // console.log(data);
                 }
             })
+            window.location.href="/flower/"
             
         }
         else{
@@ -76,11 +78,11 @@
 
         })
         alert("注册成功！")
-        window.location.href='login.html';
+        window.location.href='/login';
     }
     else{
         alert('格式错误，请重新输入');
-        window.location.href='login.html';
+        window.location.href='/login';
     }
     })
 
