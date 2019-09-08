@@ -1,5 +1,6 @@
-# FlowerShop
-[!image](https://raw.githubusercontent.com/BULLXM123/FlowerShop/master/GIF.gif)
+# FlowerShop  
+
+![image](https://raw.githubusercontent.com/BULLXM123/FlowerShop/master/GIF.gif)
 
 This is the shop about selling flowers.  
 一个简单的花店网站。  
